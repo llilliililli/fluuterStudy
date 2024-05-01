@@ -29,6 +29,35 @@ class MyHomePage extends StatefulWidget {
 }
 
 class _MyHomePageState extends State<MyHomePage> {
+
+  
+  var postList = [ //part6 postDataList
+    {
+      "title": "Sample Title 1",
+      "color": Colors.red
+    },
+     {
+      "title": "Sample Title 2",
+      "color": Colors.yellow
+    },
+     {
+      "title": "Sample Title 3",
+      "color": Colors.green
+    },
+     {
+      "title": "Sample Title 4",
+      "color": Colors.blue
+    },
+     {
+      "title": "Sample Title 5",
+      "color": Colors.pink
+    },
+     {
+      "title": "Sample Title 6",
+      "color": Colors.purple
+    },
+  ];
+
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -156,16 +185,26 @@ class _MyHomePageState extends State<MyHomePage> {
       //     ),
       // ),
 
-      ListView( //part5 ListView
-        scrollDirection: Axis.horizontal, // 가로스크롤
-        children: [
-          postContainer(title: "Title 1",colorData: Colors.yellow),
-          postContainer(title: "Title 2",colorData: Colors.purple),
-          postContainer(title: "Title 3"),
-          postContainer(title: "Title 4", colorData: Colors.pink),
-          postContainer(title: "Title 5",colorData: Colors.blue)
-        ],
-      ),
+      // ListView( //part5 ListView
+      //   scrollDirection: Axis.horizontal, // 가로스크롤
+      //   children: [
+      //     postContainer(title: "Title 1",colorData: Colors.yellow),
+      //     postContainer(title: "Title 2",colorData: Colors.purple),
+      //     postContainer(title: "Title 3"),
+      //     postContainer(title: "Title 4", colorData: Colors.pink),
+      //     postContainer(title: "Title 5",colorData: Colors.blue)
+      //   ],
+      // ),
+
+      ListView.builder( //part6 ListView builder 
+        itemCount: postList.length,
+        itemBuilder: (BuildContext con, int index){
+          return postContainer(
+            title: postList[index]["title"] as String,
+            colorData: postList[index]["color"] as Color,
+          );
+        },
+        ),
 
       floatingActionButton: FloatingActionButton( // 플로팅버튼
         onPressed: () => print("clicked"),
@@ -174,7 +213,7 @@ class _MyHomePageState extends State<MyHomePage> {
     );
   }
 
-  Widget postContainer({String title ='', Color colorData = Colors.green}){ //part5 ListView Container Widget
+  Widget postContainer({String title ='', Color colorData = Colors.green}){ //part5,6 ListView Container Widget
     return Column(
       crossAxisAlignment: CrossAxisAlignment.start,
       children: [
