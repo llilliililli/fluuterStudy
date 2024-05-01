@@ -52,59 +52,91 @@ class _MyHomePageState extends State<MyHomePage> {
           ],
           ),
         ),
-      body: //const Center(child: Text("HELLO WORLD"),),
-          Container( //테이블 생성하기
-            alignment: Alignment.topLeft,
-            // child: Column(
-            //   children: [
-            //     Container( 
-            //       width: 200, 
-            //       height: 200, 
-            //       color: Colors.blue,
-            //       ),
-            //       Container( 
-            //       width: 200, 
-            //       height: 200, 
-            //       color: Colors.red,
-            //       ),
-            //   ],
-            // ),
-            child: Column(
-              mainAxisAlignment: MainAxisAlignment.center, //세로축 정렬
-              //crossAxisAlignment: CrossAxisAlignment.center, //가로축 정렬
-              children: [
-              Row(
-              mainAxisAlignment: MainAxisAlignment.center,
-              children: [
-                Container( 
-                  width: MediaQuery.of(context).size.width/2, // 현재 디스플레이 크기 구하여, 공백없이 사이즈 맞추기
-                  height: 100, 
-                  color: Colors.blue,
-                  ),
-                  Container( 
-                  width: MediaQuery.of(context).size.width/2, 
-                  height: 100, 
-                  color: Colors.red,
-                  ),
-              ],
-            ),
-            Row(
-              mainAxisAlignment: MainAxisAlignment.center,
-              children: [
-                Container( 
-                  width: MediaQuery.of(context).size.width/2, 
-                  height: 100, 
-                  color: Colors.purple,
-                  ),
-                  Container( 
-                  width: MediaQuery.of(context).size.width/2, 
-                  height: 100, 
-                  color: Colors.green,
-                  ),
-              ],
-            ),
-            ]),
-            ),
+      body: //const Center(child: Text("HELLO WORLD"),), //part1
+          // Container( //테이블 생성하기 part2
+          //   alignment: Alignment.topLeft,
+          //   // child: Column(
+          //   //   children: [
+          //   //     Container( 
+          //   //       width: 200, 
+          //   //       height: 200, 
+          //   //       color: Colors.blue,
+          //   //       ),
+          //   //       Container( 
+          //   //       width: 200, 
+          //   //       height: 200, 
+          //   //       color: Colors.red,
+          //   //       ),
+          //   //   ],
+          //   // ),
+          //   child: Column(
+          //     mainAxisAlignment: MainAxisAlignment.center, //세로축 정렬
+          //     //crossAxisAlignment: CrossAxisAlignment.center, //가로축 정렬
+          //     children: [
+          //     Row(
+          //     mainAxisAlignment: MainAxisAlignment.center,
+          //     children: [
+          //       Container( 
+          //         width: MediaQuery.of(context).size.width/2, // 현재 디스플레이 크기 구하여, 공백없이 사이즈 맞추기
+          //         height: 100, 
+          //         color: Colors.blue,
+          //         ),
+          //         Container( 
+          //         width: MediaQuery.of(context).size.width/2, 
+          //         height: 100, 
+          //         color: Colors.red,
+          //         ),
+          //     ],
+          //   ),
+          //   Row(
+          //     mainAxisAlignment: MainAxisAlignment.center,
+          //     children: [
+          //       Container( 
+          //         width: MediaQuery.of(context).size.width/2, 
+          //         height: 100, 
+          //         color: Colors.purple,
+          //         ),
+          //         Container( 
+          //         width: MediaQuery.of(context).size.width/2, 
+          //         height: 100, 
+          //         color: Colors.green,
+          //         ),
+          //     ],
+          //   ),
+          //   ]),
+          //   ), 
+        Container(
+          width: MediaQuery.of(context).size.width,
+          height: MediaQuery.of(context).size.height,
+          color: Colors.pink,
+          child: Stack( // 위젯 겹치기 part3
+            children: [
+              Container(               
+                width: 100,
+                height: 100,
+                color: Colors.blue,
+              ),
+              Container(
+                width: 100,
+                height: 100,
+                margin: const EdgeInsets.only(top: 50, left: 25),
+                color: Colors.red,
+              ),
+               Container(
+                width: 100,
+                height: 100,
+                margin: const EdgeInsets.only(top: 75, left: 50),
+                color: Colors.green,
+              ),
+               Container(
+                width: 100,
+                height: 100,
+                margin: const EdgeInsets.only(top: 100, left: 75),
+                color: Colors.yellow,
+              )
+            ],
+          ),
+        ),
       floatingActionButton: FloatingActionButton( // 플로팅버튼
         onPressed: () => print("clicked"),
         child: const Icon(Icons.mouse),
