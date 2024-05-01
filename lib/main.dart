@@ -141,25 +141,59 @@ class _MyHomePageState extends State<MyHomePage> {
         //   ),
         // ),
       
-      Center( //part4 GestureDetector
-        // child: TextButton(
-        //    onPressed: () => print("Text Btn Clicked"), //button Click 
-        //    child: const Text("TEXT BTN"),        
-        //   ),
-         child: GestureDetector( //GestureDetector used
-            onTap: () => print("GestureDetector used"),
-            child: Container(
-              width: 100,
-              height: 100,
-              color: Colors.amber,
-            ),
-          ),
+      // Center( //part4 GestureDetector
+      //   // child: TextButton(
+      //   //    onPressed: () => print("Text Btn Clicked"), //button Click 
+      //   //    child: const Text("TEXT BTN"),        
+      //   //   ),
+      //    child: GestureDetector( //GestureDetector used
+      //       onTap: () => print("GestureDetector used"),
+      //       child: Container(
+      //         width: 100,
+      //         height: 100,
+      //         color: Colors.amber,
+      //       ),
+      //     ),
+      // ),
+
+      ListView( //part5 ListView
+        scrollDirection: Axis.horizontal, // 가로스크롤
+        children: [
+          postContainer(title: "Title 1",colorData: Colors.yellow),
+          postContainer(title: "Title 2",colorData: Colors.purple),
+          postContainer(title: "Title 3"),
+          postContainer(title: "Title 4", colorData: Colors.pink),
+          postContainer(title: "Title 5",colorData: Colors.blue)
+        ],
       ),
 
       floatingActionButton: FloatingActionButton( // 플로팅버튼
         onPressed: () => print("clicked"),
         child: const Icon(Icons.mouse),
       ),
+    );
+  }
+
+  Widget postContainer({String title ='', Color colorData = Colors.green}){ //part5 ListView Container Widget
+    return Column(
+      crossAxisAlignment: CrossAxisAlignment.start,
+      children: [
+         Container(
+            padding: const EdgeInsets.all(10),
+            child: Text(
+              title,
+              style: const TextStyle(
+                fontSize: 16,
+                fontWeight: FontWeight.bold
+              ),
+              ),
+          ),
+          Container(
+            width: MediaQuery.of(context).size.width,
+            height: 200,
+            color: colorData,
+          ),
+      ],
     );
   }
 }
