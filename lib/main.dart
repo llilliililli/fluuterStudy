@@ -50,9 +50,61 @@ class _MyHomePageState extends State<MyHomePage> {
               title: Text("Menu 1"),
             )
           ],
-          ),),
-      body: const Center(child: Text("HELLO WORLD"),
-      ),
+          ),
+        ),
+      body: //const Center(child: Text("HELLO WORLD"),),
+          Container( //테이블 생성하기
+            alignment: Alignment.topLeft,
+            // child: Column(
+            //   children: [
+            //     Container( 
+            //       width: 200, 
+            //       height: 200, 
+            //       color: Colors.blue,
+            //       ),
+            //       Container( 
+            //       width: 200, 
+            //       height: 200, 
+            //       color: Colors.red,
+            //       ),
+            //   ],
+            // ),
+            child: Column(
+              mainAxisAlignment: MainAxisAlignment.center, //세로축 정렬
+              //crossAxisAlignment: CrossAxisAlignment.center, //가로축 정렬
+              children: [
+              Row(
+              mainAxisAlignment: MainAxisAlignment.center,
+              children: [
+                Container( 
+                  width: MediaQuery.of(context).size.width/2, // 현재 디스플레이 크기 구하여, 공백없이 사이즈 맞추기
+                  height: 100, 
+                  color: Colors.blue,
+                  ),
+                  Container( 
+                  width: MediaQuery.of(context).size.width/2, 
+                  height: 100, 
+                  color: Colors.red,
+                  ),
+              ],
+            ),
+            Row(
+              mainAxisAlignment: MainAxisAlignment.center,
+              children: [
+                Container( 
+                  width: MediaQuery.of(context).size.width/2, 
+                  height: 100, 
+                  color: Colors.purple,
+                  ),
+                  Container( 
+                  width: MediaQuery.of(context).size.width/2, 
+                  height: 100, 
+                  color: Colors.green,
+                  ),
+              ],
+            ),
+            ]),
+            ),
       floatingActionButton: FloatingActionButton( // 플로팅버튼
         onPressed: () => print("clicked"),
         child: const Icon(Icons.mouse),
