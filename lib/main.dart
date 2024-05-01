@@ -52,7 +52,9 @@ class _MyHomePageState extends State<MyHomePage> {
           ],
           ),
         ),
-      body: //const Center(child: Text("HELLO WORLD"),), //part1
+      body: 
+          //const Center(child: Text("HELLO WORLD"),), //part1
+
           // Container( //테이블 생성하기 part2
           //   alignment: Alignment.topLeft,
           //   // child: Column(
@@ -105,38 +107,55 @@ class _MyHomePageState extends State<MyHomePage> {
           //   ),
           //   ]),
           //   ), 
-        Container(
-          width: MediaQuery.of(context).size.width,
-          height: MediaQuery.of(context).size.height,
-          color: Colors.pink,
-          child: Stack( // 위젯 겹치기 part3
-            children: [
-              Container(               
-                width: 100,
-                height: 100,
-                color: Colors.blue,
-              ),
-              Container(
-                width: 100,
-                height: 100,
-                margin: const EdgeInsets.only(top: 50, left: 25),
-                color: Colors.red,
-              ),
-               Container(
-                width: 100,
-                height: 100,
-                margin: const EdgeInsets.only(top: 75, left: 50),
-                color: Colors.green,
-              ),
-               Container(
-                width: 100,
-                height: 100,
-                margin: const EdgeInsets.only(top: 100, left: 75),
-                color: Colors.yellow,
-              )
-            ],
+
+        // Container(
+        //   width: MediaQuery.of(context).size.width,
+        //   height: MediaQuery.of(context).size.height,
+        //   color: Colors.pink,
+        //   child: Stack( // 위젯 겹치기 part3
+        //     children: [
+        //       Container(               
+        //         width: 100,
+        //         height: 100,
+        //         color: Colors.blue,
+        //       ),
+        //       Container(
+        //         width: 100,
+        //         height: 100,
+        //         margin: const EdgeInsets.only(top: 50, left: 25),
+        //         color: Colors.red,
+        //       ),
+        //        Container(
+        //         width: 100,
+        //         height: 100,
+        //         margin: const EdgeInsets.only(top: 75, left: 50),
+        //         color: Colors.green,
+        //       ),
+        //        Container(
+        //         width: 100,
+        //         height: 100,
+        //         margin: const EdgeInsets.only(top: 100, left: 75),
+        //         color: Colors.yellow,
+        //       )
+        //     ],
+        //   ),
+        // ),
+      
+      Center( //part4 GestureDetector
+        // child: TextButton(
+        //    onPressed: () => print("Text Btn Clicked"), //button Click 
+        //    child: const Text("TEXT BTN"),        
+        //   ),
+         child: GestureDetector( //GestureDetector used
+            onTap: () => print("GestureDetector used"),
+            child: Container(
+              width: 100,
+              height: 100,
+              color: Colors.amber,
+            ),
           ),
-        ),
+      ),
+
       floatingActionButton: FloatingActionButton( // 플로팅버튼
         onPressed: () => print("clicked"),
         child: const Icon(Icons.mouse),
