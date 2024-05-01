@@ -58,6 +58,57 @@ class _MyHomePageState extends State<MyHomePage> {
     },
   ];
 
+  var postList2 = [
+    {
+      "number" : "0",
+      "color" : Colors.amber
+    },
+     {
+      "number" : "1",
+      "color" : Colors.red
+    },
+     {
+      "number" : "2",
+      "color" : Colors.blue
+    },
+     {
+      "number" : "3",
+      "color" : Colors.green
+    },
+     {
+      "number" : "4",
+      "color" : Colors.purple
+    },
+     {
+      "number" : "5",
+      "color" : Colors.pink
+    },
+     {
+      "number" : "6",
+      "color" : Colors.orange
+    },
+     {
+      "number" : "7",
+      "color" : Colors.blueGrey
+    },
+     {
+      "number" : "8",
+      "color" : Colors.deepPurple
+    },
+     {
+      "number" : "9",
+      "color" : Colors.greenAccent
+    },
+     {
+      "number" : "10",
+      "color" : Colors.redAccent
+    },
+     {
+      "number" : "11",
+      "color" : Colors.yellowAccent
+    },
+  ];
+
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -206,32 +257,46 @@ class _MyHomePageState extends State<MyHomePage> {
       //   },
       //   ),
 
-      GridView(
-        // scrollDirection: Axis.horizontal, //가로축 스크롤
+      // GridView( //part7 GridView 사용하기
+      //   // scrollDirection: Axis.horizontal, //가로축 스크롤
+      //   gridDelegate: SliverGridDelegateWithFixedCrossAxisCount(
+      //     crossAxisCount: 2,
+      //     crossAxisSpacing: 15.0,
+      //     mainAxisSpacing: 12.0,
+      //     ),
+      //   children: [
+      //     postContainerGrid(number: "1"),
+      //     postContainerGrid(number: "2",colorData: Colors.red),
+      //     postContainerGrid(number: "3",colorData: Colors.blue),
+      //     postContainerGrid(number: "4",colorData: Colors.green),
+      //     postContainerGrid(number: "5"),
+      //     postContainerGrid(number: "6",colorData: Colors.red),
+      //     postContainerGrid(number: "7",colorData: Colors.blue),
+      //     postContainerGrid(number: "8",colorData: Colors.green),
+      //     postContainerGrid(number: "9"),
+      //     postContainerGrid(number: "10",colorData: Colors.red),
+      //     postContainerGrid(number: "11",colorData: Colors.blue),
+      //     postContainerGrid(number: "12",colorData: Colors.green),
+      //     postContainerGrid(number: "13"),
+      //     postContainerGrid(number: "14",colorData: Colors.red),
+      //     postContainerGrid(number: "15",colorData: Colors.blue),
+      //     postContainerGrid(number: "16",colorData: Colors.green),
+      //   ],
+      // ),
+
+      GridView.builder( //part8 GridView builder
         gridDelegate: SliverGridDelegateWithFixedCrossAxisCount(
           crossAxisCount: 2,
           crossAxisSpacing: 15.0,
-          mainAxisSpacing: 12.0,
-          ),
-        children: [
-          postContainerGrid(number: "1"),
-          postContainerGrid(number: "2",colorData: Colors.red),
-          postContainerGrid(number: "3",colorData: Colors.blue),
-          postContainerGrid(number: "4",colorData: Colors.green),
-          postContainerGrid(number: "5"),
-          postContainerGrid(number: "6",colorData: Colors.red),
-          postContainerGrid(number: "7",colorData: Colors.blue),
-          postContainerGrid(number: "8",colorData: Colors.green),
-          postContainerGrid(number: "9"),
-          postContainerGrid(number: "10",colorData: Colors.red),
-          postContainerGrid(number: "11",colorData: Colors.blue),
-          postContainerGrid(number: "12",colorData: Colors.green),
-          postContainerGrid(number: "13"),
-          postContainerGrid(number: "14",colorData: Colors.red),
-          postContainerGrid(number: "15",colorData: Colors.blue),
-          postContainerGrid(number: "16",colorData: Colors.green),
-        ],
-      ),
+          mainAxisSpacing: 12.0
+          ), 
+        itemCount: postList2.length,
+        itemBuilder: (BuildContext con, int index){
+          return postContainerGrid(
+            number:  postList2[index]["number"] as String,
+            colorData: postList2[index]["color"] as Color,
+          );
+        }),
 
       floatingActionButton: FloatingActionButton( // 플로팅버튼
         onPressed: () => print("clicked"),
@@ -263,7 +328,7 @@ class _MyHomePageState extends State<MyHomePage> {
     );
   }
 
-  Widget postContainerGrid({String number = "0", Color colorData = Colors.amber}){
+  Widget postContainerGrid({String number = "0", Color colorData = Colors.amber}){ //part7,8 GridView Container Widget
     return Container(
             height: 100,
             color: colorData,
