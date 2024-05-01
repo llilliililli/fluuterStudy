@@ -196,15 +196,42 @@ class _MyHomePageState extends State<MyHomePage> {
       //   ],
       // ),
 
-      ListView.builder( //part6 ListView builder 
-        itemCount: postList.length,
-        itemBuilder: (BuildContext con, int index){
-          return postContainer(
-            title: postList[index]["title"] as String,
-            colorData: postList[index]["color"] as Color,
-          );
-        },
-        ),
+      // ListView.builder( //part6 ListView builder 
+      //   itemCount: postList.length,
+      //   itemBuilder: (BuildContext con, int index){
+      //     return postContainer(
+      //       title: postList[index]["title"] as String,
+      //       colorData: postList[index]["color"] as Color,
+      //     );
+      //   },
+      //   ),
+
+      GridView(
+        // scrollDirection: Axis.horizontal, //가로축 스크롤
+        gridDelegate: SliverGridDelegateWithFixedCrossAxisCount(
+          crossAxisCount: 2,
+          crossAxisSpacing: 15.0,
+          mainAxisSpacing: 12.0,
+          ),
+        children: [
+          postContainerGrid(number: "1"),
+          postContainerGrid(number: "2",colorData: Colors.red),
+          postContainerGrid(number: "3",colorData: Colors.blue),
+          postContainerGrid(number: "4",colorData: Colors.green),
+          postContainerGrid(number: "5"),
+          postContainerGrid(number: "6",colorData: Colors.red),
+          postContainerGrid(number: "7",colorData: Colors.blue),
+          postContainerGrid(number: "8",colorData: Colors.green),
+          postContainerGrid(number: "9"),
+          postContainerGrid(number: "10",colorData: Colors.red),
+          postContainerGrid(number: "11",colorData: Colors.blue),
+          postContainerGrid(number: "12",colorData: Colors.green),
+          postContainerGrid(number: "13"),
+          postContainerGrid(number: "14",colorData: Colors.red),
+          postContainerGrid(number: "15",colorData: Colors.blue),
+          postContainerGrid(number: "16",colorData: Colors.green),
+        ],
+      ),
 
       floatingActionButton: FloatingActionButton( // 플로팅버튼
         onPressed: () => print("clicked"),
@@ -234,6 +261,16 @@ class _MyHomePageState extends State<MyHomePage> {
           ),
       ],
     );
+  }
+
+  Widget postContainerGrid({String number = "0", Color colorData = Colors.amber}){
+    return Container(
+            height: 100,
+            color: colorData,
+            child: Center(
+              child: Text("Box $number"),
+            ),
+          );
   }
 }
 
