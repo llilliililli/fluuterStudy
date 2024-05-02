@@ -110,6 +110,9 @@ class _MyHomePageState extends State<MyHomePage> {
     },
   ];
 
+  String imgUrl =  'https://i.ytimg.com/vi/kxE8HKKTf_U/maxresdefault.jpg'; //part12 이미지 url
+  String imageUrl2 = 'https://blog.ko.playstation.com/tachyon/sites/9/2023/02/668ab9fb014d32fa65a9697087f87cf3026b953d.jpg'; //part12 이미지 url2
+
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -502,32 +505,47 @@ class _MyHomePageState extends State<MyHomePage> {
       // ),
       // ),
 
-      Container( //part11 팝업창 띄우기
-        child: Center(
-          child: TextButton(
-            onPressed: (){
-              showDialog(
-                context: context, 
-                builder: (BuildContext con){
-                  return AlertDialog(
-                    title: const Text("Dialog Title"),
-                    content: SingleChildScrollView(
-                      child: 
-                        Container(
-                          child: const Text("Dialog Content"),
-                        ),
-                    ),
-                    actions: [
-                      TextButton(onPressed: ()=> Navigator.of(context).pop(), child: const Text("Yes")),
-                      TextButton(onPressed: ()=> Navigator.of(context).pop(), child: const Text("Close"))
-                    ],
-                  );
-                }
-              );
-            },
-            child: const Text("Button"),
+      // Container( //part11 팝업창 띄우기
+      //   child: Center(
+      //     child: TextButton(
+      //       onPressed: (){
+      //         showDialog(
+      //           context: context, 
+      //           builder: (BuildContext con){
+      //             return AlertDialog(
+      //               title: const Text("Dialog Title"),
+      //               content: SingleChildScrollView(
+      //                 child: 
+      //                   Container(
+      //                     child: const Text("Dialog Content"),
+      //                   ),
+      //               ),
+      //               actions: [
+      //                 TextButton(onPressed: ()=> Navigator.of(context).pop(), child: const Text("Yes")),
+      //                 TextButton(onPressed: ()=> Navigator.of(context).pop(), child: const Text("Close"))
+      //               ],
+      //             );
+      //           }
+      //         );
+      //       },
+      //       child: const Text("Button"),
+      //     ),
+      //     ),
+      // ),
+
+      Container( //part12 이미지 보여주기
+        width: MediaQuery.of(context).size.width,
+        color: Colors.amber,
+        child: Image(
+          height: 350,
+          image: NetworkImage( // 웹 이미지 보여주기
+            // 'https://i.ytimg.com/vi/kxE8HKKTf_U/maxresdefault.jpg'
+            // imgUrl,
+            imageUrl2,
           ),
-          ),
+        //  fit: BoxFit.fill, // image 가득 채움
+          fit: BoxFit.fitHeight,
+        ),
       ),
 
       floatingActionButton: FloatingActionButton( // 플로팅버튼
