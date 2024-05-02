@@ -1,3 +1,4 @@
+import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/widgets.dart';
 
@@ -533,20 +534,65 @@ class _MyHomePageState extends State<MyHomePage> {
       //     ),
       // ),
 
-      Container( //part12 이미지 보여주기
-        width: MediaQuery.of(context).size.width,
-        color: Colors.amber,
-        child: Image(
-          height: 350,
-          image: NetworkImage( // 웹 이미지 보여주기
-            // 'https://i.ytimg.com/vi/kxE8HKKTf_U/maxresdefault.jpg'
-            // imgUrl,
-            imageUrl2,
+      // Container( //part12 이미지 보여주기
+      //   width: MediaQuery.of(context).size.width,
+      //   color: Colors.amber,
+      //   child: Image(
+      //     height: 350,
+      //     image: NetworkImage( // 웹 이미지 보여주기
+      //       // 'https://i.ytimg.com/vi/kxE8HKKTf_U/maxresdefault.jpg'
+      //       // imgUrl,
+      //       imageUrl2,
+      //     ),
+      //   //  fit: BoxFit.fill, // image 가득 채움
+      //     fit: BoxFit.fitHeight,
+      //   ),
+      // ),
+
+      Container( //part13 반응형으로 만들기 
+        child: Row(children: [
+           // Container( // MediaQuery 사용하여, 비율나누기
+          //   width: MediaQuery.of(context).size.width/2,
+          //   height: 150,
+          //   color: Colors.blue,
+          // ),
+          //  Container(
+          //   width: MediaQuery.of(context).size.width/2,
+          //   height: 150,
+          //   color: Colors.red,
+          // )
+
+          Flexible( // 반응형 Flexible
+            flex: 1, //비율 지정
+            child: Container(
+              height: 150,
+              color: Colors.amber,
+            ),
           ),
-        //  fit: BoxFit.fill, // image 가득 채움
-          fit: BoxFit.fitHeight,
+          Flexible(
+            flex: 2, //비율 지정
+            child: Container(
+              height: 150,
+              color: Colors.pink,
+            ),
+          ),
+         
+          Expanded( // 반응형 Expended
+            flex: 1, //비율 지정
+            child: Container(
+              height: 150,
+              color: Colors.purple,
+            ),
+          ),
+          Expanded(
+            flex: 2, //비율 지정
+            child: Container(
+              height: 150,
+              color: Colors.brown,
+            ),
+          ),
+        ],),
         ),
-      ),
 
       floatingActionButton: FloatingActionButton( // 플로팅버튼
         onPressed: () => print("clicked"),
