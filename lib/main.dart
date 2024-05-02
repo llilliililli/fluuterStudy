@@ -594,32 +594,69 @@ class _MyHomePageState extends State<MyHomePage> {
       //   ],),
       //   ),
 
-      Container( //part14 그라데이션 적용하기 
-        width: MediaQuery.of(context).size.width,
-        height: MediaQuery.of(context).size.height,
-        // color: Colors.blue,
-        decoration: BoxDecoration(
-          gradient: 
-          // LinearGradient( 
-          //   colors: [
-          //     Colors.blue[100] as Color,
-          //     Colors.blue[300] as Color,
-          //     Colors.blue[500] as Color,
-          //   ],
-          // begin: Alignment.bottomCenter,
-          // end: Alignment.topCenter,
-          // stops: const [0.1,0.2,0.7] // 그라데이션 비율
-          // )
-           RadialGradient( 
-            center: Alignment.center,
-            colors: [
-              Colors.blue[100] as Color,
-              Colors.blue[300] as Color,
-              Colors.blue[500] as Color,
-            ],
-          stops: const [0.1,0.2,0.7], // 그라데이션 비율
-          radius: 1.0 // 반지름 키우기
-          )
+      // Container( //part14 그라데이션 적용하기 
+      //   width: MediaQuery.of(context).size.width,
+      //   height: MediaQuery.of(context).size.height,
+      //   // color: Colors.blue,
+      //   decoration: BoxDecoration(
+      //     gradient: 
+      //     // LinearGradient( 
+      //     //   colors: [
+      //     //     Colors.blue[100] as Color,
+      //     //     Colors.blue[300] as Color,
+      //     //     Colors.blue[500] as Color,
+      //     //   ],
+      //     // begin: Alignment.bottomCenter,
+      //     // end: Alignment.topCenter,
+      //     // stops: const [0.1,0.2,0.7] // 그라데이션 비율
+      //     // )
+      //      RadialGradient( 
+      //       center: Alignment.center,
+      //       colors: [
+      //         Colors.blue[100] as Color,
+      //         Colors.blue[300] as Color,
+      //         Colors.blue[500] as Color,
+      //       ],
+      //     stops: const [0.1,0.2,0.7], // 그라데이션 비율
+      //     radius: 1.0 // 반지름 키우기
+      //     )
+      //   ),
+      // ),
+
+      Container( //part15 버튼 만들기
+        child: Column(
+          children: [
+            Center(
+              child: ElevatedButton(
+                style: ElevatedButton.styleFrom(
+                  backgroundColor: Colors.amber,
+                  textStyle: const TextStyle(
+                    fontSize: 20,
+                  )
+                ),
+                onPressed: () => {
+                  print("Elevated button")
+                },
+                child: Text("Elevated Button"),
+              ),
+            ),
+            Center(
+              child: TextButton(
+                 onPressed: () => {
+                  print("Text button")
+                },
+                 child: Text("Text Button"),
+              ),
+            ),
+            Center(
+              child: OutlinedButton(
+                 onPressed: () => {
+                  print("Outlined button")
+                },
+                 child: Text("Outlined Button"),
+              ),
+            ),
+        ],
         ),
       ),
 
