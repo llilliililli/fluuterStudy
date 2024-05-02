@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:flutter/widgets.dart';
 
 void main() {
   runApp(const MainApp());
@@ -298,79 +299,207 @@ class _MyHomePageState extends State<MyHomePage> {
       //     );
       //   }),
 
-      SingleChildScrollView( //part9 스크롤 구현
-        child: 
-          Column( 
-            children: [
-              SizedBox( // 화면 3등분 스크롤뷰 구현
-                height: MediaQuery.of(context).size.height/3,
-                child: SingleChildScrollView(child: Column(children: [
-                  Container(
-                    width: MediaQuery.of(context).size.width,
-                    height: 300,
-                    color: Colors.green,
-                  ),
-                  Container(
-                    width: MediaQuery.of(context).size.width,
-                    height: 300,
-                    color: Colors.red,
-                  ),
-                  Container(
-                    width: MediaQuery.of(context).size.width,
-                    height: 300,
-                    color: Colors.yellow,
-                  ),
-                ],
-                ),
-                ),
-              ),
-              SizedBox( // 화면 3등분 스크롤뷰 구현
-                height: MediaQuery.of(context).size.height/3,
-                child: SingleChildScrollView(child: Column(children: [
-                  Container(
-                    width: MediaQuery.of(context).size.width,
-                    height: 300,
-                    color: Colors.blue,
-                  ),
-                  Container(
-                    width: MediaQuery.of(context).size.width,
-                    height: 300,
-                    color: Colors.pink,
-                  ),
-                  Container(
-                    width: MediaQuery.of(context).size.width,
-                    height: 300,
-                    color: Colors.purple,
-                  ),
-                ],
-                ),
-                ),
-              ),
-               SizedBox( // 화면 3등분 스크롤뷰 구현
-                height: MediaQuery.of(context).size.height/3,
-                child: SingleChildScrollView(child: Column(children: [
-                  Container(
-                    width: MediaQuery.of(context).size.width,
-                    height: 300,
-                    color: Colors.amber,
-                  ),
-                  Container(
-                    width: MediaQuery.of(context).size.width,
-                    height: 300,
-                    color: Colors.black,
-                  ),
-                  Container(
-                    width: MediaQuery.of(context).size.width,
-                    height: 300,
-                    color: Colors.orange,
-                  ),
-                ],
-                ),
-                ),
-              )
+      // SingleChildScrollView( //part9 스크롤 구현
+      //   child: 
+      //     Column( 
+      //       children: [
+      //         SizedBox( // 화면 3등분 스크롤뷰 구현
+      //           height: MediaQuery.of(context).size.height/3,
+      //           child: SingleChildScrollView(child: Column(children: [
+      //             Container(
+      //               width: MediaQuery.of(context).size.width,
+      //               height: 300,
+      //               color: Colors.green,
+      //             ),
+      //             Container(
+      //               width: MediaQuery.of(context).size.width,
+      //               height: 300,
+      //               color: Colors.red,
+      //             ),
+      //             Container(
+      //               width: MediaQuery.of(context).size.width,
+      //               height: 300,
+      //               color: Colors.yellow,
+      //             ),
+      //           ],
+      //           ),
+      //           ),
+      //         ),
+      //         SizedBox( // 화면 3등분 스크롤뷰 구현
+      //           height: MediaQuery.of(context).size.height/3,
+      //           child: SingleChildScrollView(child: Column(children: [
+      //             Container(
+      //               width: MediaQuery.of(context).size.width,
+      //               height: 300,
+      //               color: Colors.blue,
+      //             ),
+      //             Container(
+      //               width: MediaQuery.of(context).size.width,
+      //               height: 300,
+      //               color: Colors.pink,
+      //             ),
+      //             Container(
+      //               width: MediaQuery.of(context).size.width,
+      //               height: 300,
+      //               color: Colors.purple,
+      //             ),
+      //           ],
+      //           ),
+      //           ),
+      //         ),
+      //          SizedBox( // 화면 3등분 스크롤뷰 구현
+      //           height: MediaQuery.of(context).size.height/3,
+      //           child: SingleChildScrollView(child: Column(children: [
+      //             Container(
+      //               width: MediaQuery.of(context).size.width,
+      //               height: 300,
+      //               color: Colors.amber,
+      //             ),
+      //             Container(
+      //               width: MediaQuery.of(context).size.width,
+      //               height: 300,
+      //               color: Colors.black,
+      //             ),
+      //             Container(
+      //               width: MediaQuery.of(context).size.width,
+      //               height: 300,
+      //               color: Colors.orange,
+      //             ),
+      //           ],
+      //           ),
+      //           ),
+      //         )
               
-            ],
+      //       ],
+      //     ),
+      // ),
+
+      Container(child: Stack( //Part10 Align : 정렬하기
+        children: [
+          // Align(
+          //   alignment: Alignment.topLeft,
+          //   child: Container(
+          //     width: 100,
+          //     height: 100,
+          //     color: Colors.amber,
+          //     alignment: Alignment.center, // Container 내부요소를 중앙 정렬
+          //     child: Text("Hello"),
+          //   ),
+          // ),
+          //  Align(
+          //   alignment: Alignment.topCenter,
+          //   child: Container(
+          //     width: 100,
+          //     height: 100,
+          //     color: Colors.blue,
+          //     alignment: Alignment.center, // Container 내부요소를 중앙 정렬
+          //     child: Text("Hello"),
+          //   ),
+          // ),
+          //  Align(
+          //   alignment: Alignment.topRight,
+          //   child: Container(
+          //     width: 100,
+          //     height: 100,
+          //     color: Colors.pink,
+          //     alignment: Alignment.center, // Container 내부요소를 중앙 정렬
+          //     child: Text("Hello"),
+          //   ),
+          // ),
+          //    Align(
+          //   alignment: Alignment.centerLeft,
+          //   child: Container(
+          //     width: 100,
+          //     height: 100,
+          //     color: Colors.amber,
+          //     alignment: Alignment.center, // Container 내부요소를 중앙 정렬
+          //     child: Text("Hello"),
+          //   ),
+          // ),
+          //  Align(
+          //   alignment: Alignment.center,
+          //   child: Container(
+          //     width: 100,
+          //     height: 100,
+          //     color: Colors.blue,
+          //     alignment: Alignment.center, // Container 내부요소를 중앙 정렬
+          //     child: Text("Hello"),
+          //   ),
+          // ),
+          //  Align(
+          //   alignment: Alignment.centerRight,
+          //   child: Container(
+          //     width: 100,
+          //     height: 100,
+          //     color: Colors.pink,
+          //     alignment: Alignment.center, // Container 내부요소를 중앙 정렬
+          //     child: Text("Hello"),
+          //   ),
+          // ),
+          //           Align(
+          //   alignment: Alignment.bottomLeft,
+          //   child: Container(
+          //     width: 100,
+          //     height: 100,
+          //     color: Colors.amber,
+          //     alignment: Alignment.center, // Container 내부요소를 중앙 정렬
+          //     child: Text("Hello"),
+          //   ),
+          // ),
+          //  Align(
+          //   alignment: Alignment.bottomCenter,
+          //   child: Container(
+          //     width: 100,
+          //     height: 100,
+          //     color: Colors.blue,
+          //     alignment: Alignment.center, // Container 내부요소를 중앙 정렬
+          //     child: Text("Hello"),
+          //   ),
+          // ),
+          //  Align(
+          //   alignment: Alignment.bottomRight,
+          //   child: Container(
+          //     width: 100,
+          //     height: 100,
+          //     color: Colors.pink,
+          //     alignment: Alignment.center, // Container 내부요소를 중앙 정렬
+          //     child: Text("Hello"),
+          //   ),
+          // )
+
+        Container( // Ailgn으로 게임화면 구현
+          width: MediaQuery.of(context).size.width,
+          height: MediaQuery.of(context).size.height,
+          color: Colors.black26,
+        ),
+         Align( // 바닥
+            alignment: Alignment.bottomLeft,
+            child: Container(
+              width: MediaQuery.of(context).size.width,
+              height: 150,
+              color: Colors.brown,
+            ),
           ),
+           Align( // 캐릭터
+            alignment: Alignment.bottomLeft,
+            child: Container(
+              margin: const EdgeInsets.only(left: 40, bottom: 150),
+              width: 100,
+              height: 100,
+              color: Colors.amber,
+            ),
+          ),
+           Align( // 구름
+            alignment: Alignment.center,
+            child: Container(
+              margin: const EdgeInsets.only(bottom: 200),
+              width: 200,
+              height: 70,
+              color: Colors.lightBlue,
+            ),
+          ),
+        ],
+      ),
       ),
 
       floatingActionButton: FloatingActionButton( // 플로팅버튼
