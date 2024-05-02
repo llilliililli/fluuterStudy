@@ -1,6 +1,7 @@
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/widgets.dart';
+import 'package:flutter_application_1/second.dart';
 
 void main() {
   runApp(const MainApp());
@@ -623,41 +624,50 @@ class _MyHomePageState extends State<MyHomePage> {
       //   ),
       // ),
 
-      Container( //part15 버튼 만들기
-        child: Column(
-          children: [
-            Center(
-              child: ElevatedButton(
-                style: ElevatedButton.styleFrom(
-                  backgroundColor: Colors.amber,
-                  textStyle: const TextStyle(
-                    fontSize: 20,
-                  )
-                ),
-                onPressed: () => {
-                  print("Elevated button")
-                },
-                child: Text("Elevated Button"),
-              ),
-            ),
-            Center(
-              child: TextButton(
-                 onPressed: () => {
-                  print("Text button")
-                },
-                 child: Text("Text Button"),
-              ),
-            ),
-            Center(
-              child: OutlinedButton(
-                 onPressed: () => {
-                  print("Outlined button")
-                },
-                 child: Text("Outlined Button"),
-              ),
-            ),
-        ],
-        ),
+      // Container( //part15 버튼 만들기
+      //   child: Column(
+      //     children: [
+      //       Center(
+      //         child: ElevatedButton(
+      //           style: ElevatedButton.styleFrom(
+      //             backgroundColor: Colors.amber,
+      //             textStyle: const TextStyle(
+      //               fontSize: 20,
+      //             )
+      //           ),
+      //           onPressed: () => {
+      //             print("Elevated button")
+      //           },
+      //           child: Text("Elevated Button"),
+      //         ),
+      //       ),
+      //       Center(
+      //         child: TextButton(
+      //            onPressed: () => {
+      //             print("Text button")
+      //           },
+      //            child: Text("Text Button"),
+      //         ),
+      //       ),
+      //       Center(
+      //         child: OutlinedButton(
+      //            onPressed: () => {
+      //             print("Outlined button")
+      //           },
+      //            child: Text("Outlined Button"),
+      //         ),
+      //       ),
+      //   ],
+      //   ),
+      // ),
+
+      Center( //part16 다른화면으로 이동
+        child: GestureDetector(
+          onTap: () => Navigator.push(context, MaterialPageRoute(
+            builder: (_) => const SecondView(), // 화면구현 후 임포트 처리 필요 ctrl + .
+            )),
+            child: Container(child: const Text("Get Started"), padding: const EdgeInsets.all(15), color: Colors.blue, ),
+          ),
       ),
 
       floatingActionButton: FloatingActionButton( // 플로팅버튼
