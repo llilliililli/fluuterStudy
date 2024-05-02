@@ -284,19 +284,94 @@ class _MyHomePageState extends State<MyHomePage> {
       //   ],
       // ),
 
-      GridView.builder( //part8 GridView builder
-        gridDelegate: SliverGridDelegateWithFixedCrossAxisCount(
-          crossAxisCount: 2,
-          crossAxisSpacing: 15.0,
-          mainAxisSpacing: 12.0
-          ), 
-        itemCount: postList2.length,
-        itemBuilder: (BuildContext con, int index){
-          return postContainerGrid(
-            number:  postList2[index]["number"] as String,
-            colorData: postList2[index]["color"] as Color,
-          );
-        }),
+      // GridView.builder( //part8 GridView builder
+      //   gridDelegate: SliverGridDelegateWithFixedCrossAxisCount(
+      //     crossAxisCount: 2,
+      //     crossAxisSpacing: 15.0,
+      //     mainAxisSpacing: 12.0
+      //     ), 
+      //   itemCount: postList2.length,
+      //   itemBuilder: (BuildContext con, int index){
+      //     return postContainerGrid(
+      //       number:  postList2[index]["number"] as String,
+      //       colorData: postList2[index]["color"] as Color,
+      //     );
+      //   }),
+
+      SingleChildScrollView( //part9 스크롤 구현
+        child: 
+          Column( 
+            children: [
+              SizedBox( // 화면 3등분 스크롤뷰 구현
+                height: MediaQuery.of(context).size.height/3,
+                child: SingleChildScrollView(child: Column(children: [
+                  Container(
+                    width: MediaQuery.of(context).size.width,
+                    height: 300,
+                    color: Colors.green,
+                  ),
+                  Container(
+                    width: MediaQuery.of(context).size.width,
+                    height: 300,
+                    color: Colors.red,
+                  ),
+                  Container(
+                    width: MediaQuery.of(context).size.width,
+                    height: 300,
+                    color: Colors.yellow,
+                  ),
+                ],
+                ),
+                ),
+              ),
+              SizedBox( // 화면 3등분 스크롤뷰 구현
+                height: MediaQuery.of(context).size.height/3,
+                child: SingleChildScrollView(child: Column(children: [
+                  Container(
+                    width: MediaQuery.of(context).size.width,
+                    height: 300,
+                    color: Colors.blue,
+                  ),
+                  Container(
+                    width: MediaQuery.of(context).size.width,
+                    height: 300,
+                    color: Colors.pink,
+                  ),
+                  Container(
+                    width: MediaQuery.of(context).size.width,
+                    height: 300,
+                    color: Colors.purple,
+                  ),
+                ],
+                ),
+                ),
+              ),
+               SizedBox( // 화면 3등분 스크롤뷰 구현
+                height: MediaQuery.of(context).size.height/3,
+                child: SingleChildScrollView(child: Column(children: [
+                  Container(
+                    width: MediaQuery.of(context).size.width,
+                    height: 300,
+                    color: Colors.amber,
+                  ),
+                  Container(
+                    width: MediaQuery.of(context).size.width,
+                    height: 300,
+                    color: Colors.black,
+                  ),
+                  Container(
+                    width: MediaQuery.of(context).size.width,
+                    height: 300,
+                    color: Colors.orange,
+                  ),
+                ],
+                ),
+                ),
+              )
+              
+            ],
+          ),
+      ),
 
       floatingActionButton: FloatingActionButton( // 플로팅버튼
         onPressed: () => print("clicked"),
