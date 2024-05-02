@@ -374,8 +374,8 @@ class _MyHomePageState extends State<MyHomePage> {
       //     ),
       // ),
 
-      Container(child: Stack( //Part10 Align : 정렬하기
-        children: [
+      // Container(child: Stack( //Part10 Align : 정렬하기
+      //   children: [
           // Align(
           //   alignment: Alignment.topLeft,
           //   child: Container(
@@ -467,39 +467,67 @@ class _MyHomePageState extends State<MyHomePage> {
           //   ),
           // )
 
-        Container( // Ailgn으로 게임화면 구현
-          width: MediaQuery.of(context).size.width,
-          height: MediaQuery.of(context).size.height,
-          color: Colors.black26,
-        ),
-         Align( // 바닥
-            alignment: Alignment.bottomLeft,
-            child: Container(
-              width: MediaQuery.of(context).size.width,
-              height: 150,
-              color: Colors.brown,
-            ),
+      //   Container( // Ailgn으로 게임화면 구현
+      //     width: MediaQuery.of(context).size.width,
+      //     height: MediaQuery.of(context).size.height,
+      //     color: Colors.black26,
+      //   ),
+      //    Align( // 바닥
+      //       alignment: Alignment.bottomLeft,
+      //       child: Container(
+      //         width: MediaQuery.of(context).size.width,
+      //         height: 150,
+      //         color: Colors.brown,
+      //       ),
+      //     ),
+      //      Align( // 캐릭터
+      //       alignment: Alignment.bottomLeft,
+      //       child: Container(
+      //         margin: const EdgeInsets.only(left: 40, bottom: 150),
+      //         width: 100,
+      //         height: 100,
+      //         color: Colors.amber,
+      //       ),
+      //     ),
+      //      Align( // 구름
+      //       alignment: Alignment.center,
+      //       child: Container(
+      //         margin: const EdgeInsets.only(bottom: 200),
+      //         width: 200,
+      //         height: 70,
+      //         color: Colors.lightBlue,
+      //       ),
+      //     ),
+      //   ],
+      // ),
+      // ),
+
+      Container( //part11 팝업창 띄우기
+        child: Center(
+          child: TextButton(
+            onPressed: (){
+              showDialog(
+                context: context, 
+                builder: (BuildContext con){
+                  return AlertDialog(
+                    title: const Text("Dialog Title"),
+                    content: SingleChildScrollView(
+                      child: 
+                        Container(
+                          child: const Text("Dialog Content"),
+                        ),
+                    ),
+                    actions: [
+                      TextButton(onPressed: ()=> Navigator.of(context).pop(), child: const Text("Yes")),
+                      TextButton(onPressed: ()=> Navigator.of(context).pop(), child: const Text("Close"))
+                    ],
+                  );
+                }
+              );
+            },
+            child: const Text("Button"),
           ),
-           Align( // 캐릭터
-            alignment: Alignment.bottomLeft,
-            child: Container(
-              margin: const EdgeInsets.only(left: 40, bottom: 150),
-              width: 100,
-              height: 100,
-              color: Colors.amber,
-            ),
           ),
-           Align( // 구름
-            alignment: Alignment.center,
-            child: Container(
-              margin: const EdgeInsets.only(bottom: 200),
-              width: 200,
-              height: 70,
-              color: Colors.lightBlue,
-            ),
-          ),
-        ],
-      ),
       ),
 
       floatingActionButton: FloatingActionButton( // 플로팅버튼
