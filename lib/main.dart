@@ -594,7 +594,7 @@ class _MyHomePageState extends State<MyHomePage> {
       //   ],),
       //   ),
 
-      Container( //part14 그라데이션 적용하기
+      Container( //part14 그라데이션 적용하기 
         width: MediaQuery.of(context).size.width,
         height: MediaQuery.of(context).size.height,
         // color: Colors.blue,
