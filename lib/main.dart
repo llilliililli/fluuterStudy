@@ -549,50 +549,79 @@ class _MyHomePageState extends State<MyHomePage> {
       //   ),
       // ),
 
-      Container( //part13 반응형으로 만들기 
-        child: Row(children: [
-           // Container( // MediaQuery 사용하여, 비율나누기
-          //   width: MediaQuery.of(context).size.width/2,
-          //   height: 150,
-          //   color: Colors.blue,
-          // ),
-          //  Container(
-          //   width: MediaQuery.of(context).size.width/2,
-          //   height: 150,
-          //   color: Colors.red,
-          // )
+      // Container( //part13 반응형으로 만들기 
+      //   child: Row(children: [
+      //      // Container( // MediaQuery 사용하여, 비율나누기
+      //     //   width: MediaQuery.of(context).size.width/2,
+      //     //   height: 150,
+      //     //   color: Colors.blue,
+      //     // ),
+      //     //  Container(
+      //     //   width: MediaQuery.of(context).size.width/2,
+      //     //   height: 150,
+      //     //   color: Colors.red,
+      //     // )
 
-          Flexible( // 반응형 Flexible
-            flex: 1, //비율 지정
-            child: Container(
-              height: 150,
-              color: Colors.amber,
-            ),
-          ),
-          Flexible(
-            flex: 2, //비율 지정
-            child: Container(
-              height: 150,
-              color: Colors.pink,
-            ),
-          ),
+      //     Flexible( // 반응형 Flexible
+      //       flex: 1, //비율 지정
+      //       child: Container(
+      //         height: 150,
+      //         color: Colors.amber,
+      //       ),
+      //     ),
+      //     Flexible(
+      //       flex: 2, //비율 지정
+      //       child: Container(
+      //         height: 150,
+      //         color: Colors.pink,
+      //       ),
+      //     ),
          
-          Expanded( // 반응형 Expended
-            flex: 1, //비율 지정
-            child: Container(
-              height: 150,
-              color: Colors.purple,
-            ),
-          ),
-          Expanded(
-            flex: 2, //비율 지정
-            child: Container(
-              height: 150,
-              color: Colors.brown,
-            ),
-          ),
-        ],),
+      //     Expanded( // 반응형 Expended
+      //       flex: 1, //비율 지정
+      //       child: Container(
+      //         height: 150,
+      //         color: Colors.purple,
+      //       ),
+      //     ),
+      //     Expanded(
+      //       flex: 2, //비율 지정
+      //       child: Container(
+      //         height: 150,
+      //         color: Colors.brown,
+      //       ),
+      //     ),
+      //   ],),
+      //   ),
+
+      Container( //part14 그라데이션 적용하기
+        width: MediaQuery.of(context).size.width,
+        height: MediaQuery.of(context).size.height,
+        // color: Colors.blue,
+        decoration: BoxDecoration(
+          gradient: 
+          // LinearGradient( 
+          //   colors: [
+          //     Colors.blue[100] as Color,
+          //     Colors.blue[300] as Color,
+          //     Colors.blue[500] as Color,
+          //   ],
+          // begin: Alignment.bottomCenter,
+          // end: Alignment.topCenter,
+          // stops: const [0.1,0.2,0.7] // 그라데이션 비율
+          // )
+           RadialGradient( 
+            center: Alignment.center,
+            colors: [
+              Colors.blue[100] as Color,
+              Colors.blue[300] as Color,
+              Colors.blue[500] as Color,
+            ],
+          stops: const [0.1,0.2,0.7], // 그라데이션 비율
+          radius: 1.0 // 반지름 키우기
+          )
         ),
+      ),
 
       floatingActionButton: FloatingActionButton( // 플로팅버튼
         onPressed: () => print("clicked"),
